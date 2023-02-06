@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const MusicTable = (props) => {
+const MusicTable = ({ songs }) => {
     return ( 
         <table>
             <thead>
@@ -15,7 +15,7 @@ const MusicTable = (props) => {
                 </tr>
             </thead>
             <tbody>
-            {props.parentSongs.map((song, index) => {
+            {songs.map((song, index) => {
                 return (
                     <tr>
                         <td>{index + 1}</td>
