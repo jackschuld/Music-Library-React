@@ -6,24 +6,26 @@ const AddNewSong = (props) => {
     const [album, setAlbum] = useState('');
     const [release_date, setReleaseDate] = useState('');
     const [genre, setGenre] = useState('');
+    const [likes, setLikes] = useState(0);
     
     
-    function createNewSong(event) {
+    function handleNewSong(event) {
         event.preventDefault();
-        let newEntry = {
+        let newSong = {
             title: title,
             artist: artist,
             album: album,
             release_date: release_date,
-            genre: genre
+            genre: genre,
+            likes: likes
         };
-        console.log(newEntry)
+        console.log(newSong)
 
-        props.addNewSong(newEntry);
+        props.addNewSongProperty(newSong);
   }
 
   return (
-    <span>
+    <form onSubmit={handleNewSong}>
         <div>
             <label>Title</label>
             <input type='text' value={title} onChange={(event) => setTitle(event.target.value)} />            
@@ -38,14 +40,18 @@ const AddNewSong = (props) => {
         </div>
         <div>
             <label>Release Date</label>
-            <input type='text' value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/>
+            <input type='date' value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/>
         </div>
         <div>
             <label>Genre</label>
             <input type='text' value={genre} onChange={(event) => setGenre(event.target.value)}/>
         </div>
+        <div>
+            <label>Likes</label>
+            <input type='number' value={likes} onChange={(event) => setLikes(parseFloat(event.target.value))}/>
+        </div>
         <button type='submit'>Add</button>
-    </span>
+    </form>
 
   )
 

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import SearchBar from './Components/SearchBar/SearchBar';
-import MusicTable from './Components/MusicTable.jsx/MusicTable';
+import MusicTable from './Components/MusicTable/MusicTable';
+import AddNewSong from './Components/AddNewSong/AddNewSong'
 import './App.css';
-import AddNewSong from './Components/addNewSong/addNewSong';
 
 function App() {
 
@@ -20,6 +20,7 @@ function App() {
 
   async function addNewSong(newSong) {
     let response = await axios.post('http://127.0.0.1:8000/api/music', newSong);
+    console.log(response)
     if (response.status === 201) {
       await getAllSongs();
     }
@@ -30,7 +31,7 @@ function App() {
     <div>
       <SearchBar songs={songs} setSongs={setSongs}/>
       <button onClick={getAllSongs}>Reset Filter</button>
-      <AddNewSong displaySongs={addNewSong}/>
+      <AddNewSong addNewSongProperty={addNewSong}/>
       <MusicTable songs={songs}/>
     </div>
   );
