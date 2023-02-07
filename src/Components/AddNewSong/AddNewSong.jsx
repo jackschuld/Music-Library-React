@@ -19,7 +19,6 @@ const AddNewSong = (props) => {
             genre: genre,
             likes: likes
         };
-        console.log(newSong)
 
         props.addNewSongProperty(newSong);
   }
@@ -48,7 +47,7 @@ const AddNewSong = (props) => {
         </div>
         <div>
             <label>Likes</label>
-            <input type='number' value={likes} onChange={(event) => setLikes(parseFloat(event.target.value))}/>
+            <input type='number' value={likes} onChange={(event) => setLikes(event.target.value)}/>
         </div>
         <button type='submit'>Add</button>
     </form>
