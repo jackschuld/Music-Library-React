@@ -14,18 +14,18 @@ const SearchBar = ({ songs, setSongs }) => {
     }
 
     return ( 
-        <div onSubmit={filterSongs}>
-            <label>Select Category</label>
-            <select id='category-filter' onChange={(event) => changeFilter(event.target.value)}
+        <div onSubmit={filterSongs} className='spacing'>
+            <label class="text-white bg-dark">Select Category</label>
+            <select class="text-white bg-dark" onChange={(event) => changeFilter(event.target.value)}
             value={currentCategory}>
-                <option value=''>All</option>
+                <option value=''>All</option> 
                 <option value='title'>Title</option>
                 <option value='artist'>Artist</option>
                 <option value='album'>Album</option>
                 <option value='release_date'>Release Date</option>
                 <option value='genre'>Genre</option>
             </select>
-            <select id='filter-options' onChange={(event) => filterSongs(event.target.value)}>
+            <select class="text-white bg-dark" onChange={(event) => filterSongs(event.target.value)}>
             {songs.map((song) => {
                 return (
                     <option>{song[currentCategory]}</option>

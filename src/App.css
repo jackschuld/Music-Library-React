@@ -1,9 +1,23 @@
-nav {
+nav,
+form,
+form > div {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+}
+
+.spacing {
+    padding: 2px 10px;
+    margin: 2px 10px;
 }
 
 nav > ul > li {
     list-style-type: none;
 }
+
+/* th,
+td {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    margin: 1em;
+} */

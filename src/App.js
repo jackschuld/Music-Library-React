@@ -29,11 +29,22 @@ function App() {
 
 
   return (
-    <div>
-      <SearchBar songs={songs} setSongs={setSongs}/>
-      <button onClick={getAllSongs}>Reset Filter</button>
-      <AddNewSong addNewSongProperty={addNewSong}/>
-      <MusicTable songs={songs}/>
+    <div className='bg-dark'>
+      <div className='spacing'>
+        <h1 class="text-white bg-dark">Jack's Music Library</h1>
+      </div>
+      <div className='spacing'>
+        <h3 class="text-white bg-dark">Add Song</h3>
+        <AddNewSong addNewSongProperty={addNewSong}/>
+      </div>
+      <div className='spacing'>
+        <h3 class="text-white bg-dark">Filter Music Library</h3>
+        <SearchBar songs={songs} setSongs={setSongs}/>
+        <button class="text-white bg-dark" onClick={getAllSongs}>Reset Filter</button>
+      </div>
+      <div className='spacing'>
+        <MusicTable songs={songs}/>
+      </div>
     </div>
   );
 }

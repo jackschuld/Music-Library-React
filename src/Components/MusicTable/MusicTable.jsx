@@ -3,22 +3,23 @@ import React from 'react';
 
 const MusicTable = ({ songs }) => {
     return ( 
-        <table>
+        <table class="table table-hover table-dark">
             <thead>
                 <tr>
-                    <th>Song</th>
-                    <th>Artist</th>
-                    <th>Album</th>
-                    <th>Release Date</th>
-                    <th>Genre</th>
-                    <th>Likes</th>            
+                    <th scope="col">#</th>
+                    <th scope="col">Song</th>
+                    <th scope="col">Artist</th>
+                    <th scope="col">Album</th>
+                    <th scope="col">Release Date</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Likes</th>            
                 </tr>
             </thead>
             <tbody>
             {songs.map((song, index) => {
                 return (
                     <tr>
-                        <td>{index + 1}</td>
+                        <th scope="row">{index + 1}</th>
                         <td>{song.title}</td>
                         <td>{song.artist}</td>
                         <td>{song.album}</td>
